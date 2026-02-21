@@ -1,0 +1,273 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Car Rental Pricing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4e225",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#222110",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .custom-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen flex flex-col">
+<!-- Header Section -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 px-4 py-4">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined"><a href="{% url 'index' %}">arrow_back</a></span>
+</button>
+<h1 class="text-xl font-bold tracking-tight">Car Pricing</h1>
+</div>
+
+</div>
+</header>
+<main class="flex-1 max-w-7xl mx-auto w-full px-4 py-6">
+<!-- Category Chips -->
+<div class="flex gap-3 overflow-x-auto pb-6 custom-scrollbar">
+<button class="whitespace-nowrap px-6 py-2 rounded-full bg-primary text-background-dark font-semibold text-sm">All Cars</button>
+
+</div>
+<!-- Pricing Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+<!-- Card 1: Alto -->
+<div class="group relative bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300">
+<div class="aspect-[16/10] w-full bg-neutral-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Compact white economy hatchback car side profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXIgbcnjAzm9VpjN3Cu8BtulQkZ388QCXH-Oy6UjTVQxNPVAF7JWX4fXXfOGov6M4JORACrfEyET8Zi2WB2J86CKXdjCcnd91TpPaYev0kJ8e9PY02W0qKx8SX139N5N4WR_XoTFFtzcbdsWyg3UIQVM5ZEoj8kE40GJzBva7M9fhw5WOYwiTuHxIdoFWfxrceGgMwr-tyMGcUxsnZrYRQdq5JmF0rBtyXKUp8QpUxKyjKRlWtcyKPFCd7FlJ0P9HIucscPO_xViZc"/>
+<span class="absolute top-3 left-3 z-20 bg-primary/90 text-background-dark text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Economy</span>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<h3 class="text-lg font-bold">Alto</h3>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400">Starting from</span>
+<span class="text-xl font-bold text-primary">₹10<span class="text-sm font-normal text-slate-300">/km</span></span>
+</div>
+<button class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Swift -->
+<div class="group relative bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300">
+<div class="aspect-[16/10] w-full bg-neutral-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Sporty silver hatchback parked on street" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZeLwLYUbrGgIC4633HkExbIIZlFnJ--NMZcuyXu2jZVIhOeYzvqoA1rSMR0GqRxvX-E7CTE7hbrqPKHipiuDczAb8mFfaCLw4rM93gY0aowREmuWnnFVobtf4k3X31wqtIwRnEM-mz6V5C0Hv7ZwInXm5d08u_wx3qoMwN7W88yrhRCpFT-SQw2exUxjnN-zXOrYtX8a7RVZx20JGsmT6aJUfUlS5lNhApuOvd8yxOAt5ZUVcaFbsVq_lpSMpN6T4xbDA1N82x4aY"/>
+<span class="absolute top-3 left-3 z-20 bg-primary/90 text-background-dark text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Economy</span>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<h3 class="text-lg font-bold">Swift</h3>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400">Starting from</span>
+<span class="text-xl font-bold text-primary">₹12<span class="text-sm font-normal text-slate-300">/km</span></span>
+</div>
+<button class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Baleno -->
+<div class="group relative bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300">
+<div class="aspect-[16/10] w-full bg-neutral-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Modern blue premium hatchback outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv3NvnCwFRYVLPv1YyXERZ10LqwJFMpn3CJ7tqV3YQymg8CYn1NbXRcXm0Lmu6apMza0B8F8ZB_7KHSs_iiqMIUQfQGLZt6vZ_fVV6VTfwlteQZBgu0Oc9TCajZHsEdhtLbY3J_D8Rr2aWWpfrbA5gH_Dd2QfxyG4XcB1BtZ3Nam5w31z7LnudYQhQ5mBG6bmA1gzTmc6QGsU83ZhqEdfT63JnZM22KNmEfJbLQrpIZD2W_-H5Q3SdT9Ip4INJE200yIuI102UFNbC"/>
+<span class="absolute top-3 left-3 z-20 bg-primary/90 text-background-dark text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Economy</span>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<h3 class="text-lg font-bold">Baleno</h3>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400">Starting from</span>
+<span class="text-xl font-bold text-primary">₹13<span class="text-sm font-normal text-slate-300">/km</span></span>
+</div>
+<button class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4: Dzire -->
+<div class="group relative bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300">
+<div class="aspect-[16/10] w-full bg-neutral-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="White compact sedan on asphalt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz-cHcl2ZVNu8zXll3Kg_yqZhb5dbLhp82zUNqiApQ8ZG8jexWfrz-YBUm0OJlYhAwy1imCZ0IOtwzsioyFoxW2KU2zk4YjAat4KbK5QceE4f5PgyZzbTAMrTT93EM_PQCuWoc8ZZo8VVVd6yBwKvOxwRQiBawxd9wNji8rW3r17tQy7QcycfRoNDVjo6PF24byqxTY6pFkEp26_hnbhkURRXUtmryaRGN729AxRLODciTP5TV2L-PLM20F7JynUDPe1-M9ywRo9xJ"/>
+<span class="absolute top-3 left-3 z-20 bg-primary/90 text-background-dark text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Economy</span>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<h3 class="text-lg font-bold">Dzire</h3>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400">Starting from</span>
+<span class="text-xl font-bold text-primary">₹14<span class="text-sm font-normal text-slate-300">/km</span></span>
+</div>
+<button class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 5: Ertiga -->
+<div class="group relative bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300">
+<div class="aspect-[16/10] w-full bg-neutral-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Large family MUV car silver finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwWEm5Mz6bHlLi6ob4jCDCHm40C1DcXVGaWqwZbG95loEzVJMoM7OL2_M8uK82t8WEAnj2GWuoK95VTTE_yV8VkBVHj81yg1wtYYg_H-9BlIKJqaawmRZCMi8-saDXejNhMIu7V4qgABCrfIl6tM0YAwk3LqbvhZf-hCWD0sy_cUBML3OMrQzdQPANBmxhFAKMxX8iYvD9K7FGM_5NMcy9zdSeIQG41fpU6pDh4Fp2feXrW6TDRb0pt94ATZ4YWSVY6NVVMh2PjJp1"/>
+<span class="absolute top-3 left-3 z-20 bg-primary/90 text-background-dark text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">MUV</span>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<h3 class="text-lg font-bold">Ertiga</h3>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400">Starting from</span>
+<span class="text-xl font-bold text-primary">₹18<span class="text-sm font-normal text-slate-300">/km</span></span>
+</div>
+<button class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 6: Creta -->
+<div class="group relative bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300">
+<div class="aspect-[16/10] w-full bg-neutral-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Modern dark grey SUV on hill" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4cV2jwXOFZz6gZ5UThxNqoAUEDvpf2uvK2bNXxD4eez8cvD9HJcVDkUuB93YRrd9-T9wxEbqk023wzyGeAANkyNDHG4QN00wItfegRwwGGhc4ENxR8oDdv7_DlNlFqpwaBrRy5IsMTihgB7GJCyncyIiZMdJ2NjBpOtUeJyQADQubMlIQAG38Pa5p9UjrRLf2K9hUsyxxAm3yp2R2_xO8vj1FlMSmr84IcIsFdFYs1oglLa1b63e8xhg1y40GjS17iwvUoBO1Ltcy"/>
+<span class="absolute top-3 left-3 z-20 bg-primary/90 text-background-dark text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">SUV</span>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<h3 class="text-lg font-bold">Creta</h3>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400">Starting from</span>
+<span class="text-xl font-bold text-primary">₹20<span class="text-sm font-normal text-slate-300">/km</span></span>
+</div>
+<button class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 7: Innova -->
+<div class="group relative bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300">
+<div class="aspect-[16/10] w-full bg-neutral-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Luxury white MPV on city road" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgh5_4Q_q4w_Kb6DzvZhlfu_lAPbE75MZ4EqmA-yja2QBR4iNDODOIPH22ossn_U9xCVVZieYDPNasqFOAho5FlM5vGODFiLSDcItZWxHhumD3PK6NJaleAPFp4MCsI2o3hWhc2QCZZC0cmd8ggNMnJSezntzl61UthcA64y4SKZlshzXVXkx5xiZI2CedQFAGdWTlfUvqZ8ryCoLwdKWkBzSmz3jratSLuJOWBCwwxAL4hGRCUhuefFhewv8LdJWXWMGuujJpVE3p"/>
+<span class="absolute top-3 left-3 z-20 bg-primary/90 text-background-dark text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Premium</span>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<h3 class="text-lg font-bold">Innova</h3>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400">Starting from</span>
+<span class="text-xl font-bold text-primary">₹22<span class="text-sm font-normal text-slate-300">/km</span></span>
+</div>
+<button class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 8: XUV700 -->
+<div class="group relative bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300">
+<div class="aspect-[16/10] w-full bg-neutral-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Modern sleek SUV with LED headlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF7IvFu8Yvc4v8vcskkBGHzleKeqOgmSLCFtnDurMP26FgOkuzgctwMXtRnwf5dpwSVtNrmG36IEm94aOOSTm_Z6YLDzlaablEq-PmVxEQ2zL0XF_27g-erjUUxKuWJef2MVUxUNAaDISiHCl_x7HkkV3k32AklISyQiMDkb-EpgM5RfdZW3r29rMA1NnbIMjOInpdBwas7ZKYFhwTPm3qtU6TzrNIynSfD8psQBXt4NX4-p_-0RrY7eeB5hUteJ_z31jgrAdk3N5R"/>
+<span class="absolute top-3 left-3 z-20 bg-primary/90 text-background-dark text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">SUV</span>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<h3 class="text-lg font-bold">XUV700</h3>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400">Starting from</span>
+<span class="text-xl font-bold text-primary">₹25<span class="text-sm font-normal text-slate-300">/km</span></span>
+</div>
+<button class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 9: Thar -->
+<div class="group relative bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300">
+<div class="aspect-[16/10] w-full bg-neutral-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Rugged offroad 4x4 vehicle in desert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqiYwiGqJ-PwiTHAEaZP_GRwNHkVhfWHJmtRk5TI7qOfG8lOyhjCCygicLiCiPZ3fzd7syGmUet8Wj3lJ5MilWMI2ZyHEqT3q-n6DRfre9mDCCnJib3k-kk5S4bw8hiihjAure5UfskuecBA9u-8MWBWSUXNrXAwSmxGSyqDxVBz8Fub0tIm4K87JxBPGiDUWBAbYafO0vp51km5bKNwe_lY0b4hDKhdHycmRwHwvfUIm5PvpSQFe_7VmIP95EBCHJVJa2JvjEcuPC"/>
+<span class="absolute top-3 left-3 z-20 bg-primary/90 text-background-dark text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Off-Road</span>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<h3 class="text-lg font-bold">Thar</h3>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400">Starting from</span>
+<span class="text-xl font-bold text-primary">₹28<span class="text-sm font-normal text-slate-300">/km</span></span>
+</div>
+<button class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 10: Fortuner -->
+<div class="group relative bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300">
+<div class="aspect-[16/10] w-full bg-neutral-800 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Large black premium luxury SUV" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj0cq8izAbcxBgi1N-Jo31xru6dd_jaL9xGnZ-K6NKzBTOTD7ewjqiNV625bwF0s9NiD01gEqDrGlZ6sOgBx493G362x-LNgswKlZ_Vl418wWpi46TCau7XMJHKCoAxoh_ntcIv1xCwSPGBBKl64-pso-DiXJXhzvw8dKafDhsjQKJJwBhN-2QWXqL5AnGp2FJRb-RAVDBHBabcjzqYZSFLVudys_F67brnnoyleqr0KBsZTfpcxW81j1mYtkJCiBSiRh_sKnoATJC"/>
+<span class="absolute top-3 left-3 z-20 bg-primary/90 text-background-dark text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Premium</span>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<h3 class="text-lg font-bold">Fortuner</h3>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col">
+<span class="text-xs text-slate-400">Starting from</span>
+<span class="text-xl font-bold text-primary">₹35<span class="text-sm font-normal text-slate-300">/km</span></span>
+</div>
+<button class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+
+</body></html>

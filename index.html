@@ -1,0 +1,385 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="google-site-verification" content="bxpbNTz3wfvfLkSGOIeY4Q2l2zZkMA0oXW8qT3RDmSg" />
+<title>Anbu cabs | best cab servise in chennai</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="{% static 'css/index.css' %}"/>
+<script id="tailwind-config">
+
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4e225",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#0a0a0a",
+                        "surface-dark": "#1a1a1a",
+                        "border-dark": "#333333",
+                        "text-muted": "#a1a1aa"
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom radio styling to match theme */
+        input[type="radio"]:checked {
+            background-color: #f4e225;
+            border-color: #f4e225;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-white min-h-screen">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md border-b border-border-dark px-4 py-3">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="bg-primary p-1.5 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-black font-bold">local_taxi</span>
+</div>
+<h1 class="text-xl font-extrabold tracking-tight text-white uppercase italic">Yellow<span class="text-primary">Cab</span></h1>
+</div>
+<a class="flex items-center gap-2 text-primary font-bold hover:opacity-80 transition-opacity" href="tel:9940395607">
+<span class="material-symbols-outlined">call</span>
+<span class="hidden sm:inline">9940395607</span>
+</a>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+<!-- Hero Section -->
+<section class="text-center mb-10">
+<h2 class="text-4xl sm:text-5xl font-black mb-4 leading-tight">
+                Book Your Ride <span class="text-primary italic">Instantly</span>
+</h2>
+<p class="text-text-muted text-lg max-w-xl mx-auto">
+                Reliable taxis at your doorstep 24/7. Professional drivers, modern fleet, and competitive rates.
+            </p>
+</section>
+<!-- Hero Image -->
+<div class="mb-12 rounded-xl overflow-hidden shadow-2xl border border-border-dark">
+
+<div class="w-full h-48 sm:h-64 bg-center bg-cover" data-alt="Modern yellow taxi driving on a city street at night" style="position: relative;background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7Qj7E8VuqhLl2d58S3pujSMw8veE22vyR8Ibx81hl9mJWVepTYvc75cOQMpTO-eWHto7EUVd29HojFF3ia0hxXPaV47IeMkM021A-egNYneMgC2xRNPJXweVHxBLHOw7xyRAo_QCgninLNm-FNDq60XKie4jSl71qd-u2MKI7C-EmHsUoCg1cjRhac5rtifiChJrA-S_Gq4T5xTnAJ8ofWXJGvQn4HsARuAptecjllsOyfvFwMES4JRxYrxXRpnZ7xBqXDnGbFGYc');">
+
+</div>
+</div>
+<button class="cardetails w-full bg-primary hover:bg-[#e2d020] text-black font-extrabold text-lg py-4 rounded-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-lg shadow-primary/20"><a href="{% url 'cars' %}">See Car Details</a></button>
+<!-- Booking Form Card -->
+<div class="bg-surface-dark border border-border-dark rounded-xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary text-3xl">edit_calendar</span>
+<h3 class="text-2xl font-bold">Reservation Details</h3>
+</div>
+<form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-6" onsubmit="event.preventDefault();">
+<!-- Name -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-text-muted">Full Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-xl">person</span>
+<input class="w-full bg-background-dark border border-border-dark rounded-lg py-3 pl-10 pr-4 focus:ring-2 focus:ring-primary focus:border-primary text-white placeholder:text-zinc-600 transition-all" id="name" placeholder="John Doe" type="text"/>
+</div>
+</div>
+<!-- Mobile -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-text-muted">Mobile Number</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-xl">smartphone</span>
+<input class="w-full bg-background-dark border border-border-dark rounded-lg py-3 pl-10 pr-4 focus:ring-2 focus:ring-primary focus:border-primary text-white placeholder:text-zinc-600 transition-all" id="mobile" placeholder="9940395607" type="tel"/>
+</div>
+</div>
+
+<!-- PICKUP -->
+<div class="flex flex-col gap-2">
+  <label class="text-sm font-semibold text-text-muted">Pickup Location</label>
+
+  <input
+    class="w-full bg-background-dark border border-border-dark rounded-lg py-3 px-4 text-white"
+    id="pickup"
+    list="pickupList"
+    placeholder="Current Location"
+    type="text"
+  />
+
+  <!-- Pickup Suggestions -->
+  <datalist id="pickupList"></datalist>
+</div>
+
+<!-- DROP -->
+<div class="flex flex-col gap-2">
+  <label class="text-sm font-semibold text-text-muted">Destination</label>
+
+  <input
+    class="w-full bg-background-dark border border-border-dark rounded-lg py-3 px-4 text-white"
+    id="drop"
+    list="dropList"
+    placeholder="Where to?"
+    type="text"
+  />
+
+  <!-- Drop Suggestions -->
+  <datalist id="dropList"></datalist>
+</div>
+
+<!-- date and time -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-text-muted">date</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-xl"></span>
+<input class="w-full bg-background-dark border border-border-dark rounded-lg py-3 pl-10 pr-4 focus:ring-2 focus:ring-primary focus:border-primary text-white placeholder:text-zinc-600 transition-all" id="date" placeholder="date" type="date" required/>
+</div>
+</div>
+
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-text-muted">Time</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-xl"></span>
+<input class="w-full bg-background-dark border border-border-dark rounded-lg py-3 pl-10 pr-4 focus:ring-2 focus:ring-primary focus:border-primary text-white placeholder:text-zinc-600 transition-all" id="time" placeholder="Time" type="time" required/>
+</div>
+</div>
+<!-- Trip Type -->
+<div class="flex flex-col gap-2 md:col-span-2">
+<label class="text-sm font-semibold text-text-muted">Trip Type</label>
+<div class="flex flex-wrap gap-4 mt-1">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="w-5 h-5 text-primary bg-background-dark border-border-dark focus:ring-offset-background-dark" name="tripType" type="radio" value="One Way"/>
+<span class="text-white group-hover:text-primary transition-colors">One Way</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="w-5 h-5 text-primary bg-background-dark border-border-dark focus:ring-offset-background-dark" name="tripType" type="radio" value="Up and Down"/>
+<span class="text-white group-hover:text-primary transition-colors">Up and Down (Round Trip)</span>
+</label>
+</div>
+</div>
+<!-- Members -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-text-muted">Number of Passengers</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-xl">groups</span>
+<input class="w-full bg-background-dark border border-border-dark rounded-lg py-3 pl-10 pr-4 focus:ring-2 focus:ring-primary focus:border-primary text-white transition-all" id="members" max="15" min="1" type="number" value="1"/>
+</div>
+</div>
+<!-- Car Model -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-text-muted">Preferred Car Model</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-xl">directions_car</span>
+<select class="w-full bg-background-dark border border-border-dark rounded-lg py-3 pl-10 pr-4 focus:ring-2 focus:ring-primary focus:border-primary text-white appearance-none transition-all" id="carModel">
+<option value="Mini">Mini (Hatchback)</option>
+<option selected="" value="Sedan">Sedan (Standard)</option>
+<option value="SUV">SUV (Premium/Large)</option>
+<option value="Premium">Premium (Luxury)</option>
+</select>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="md:col-span-2 mt-4">
+<button class="w-full bg-primary hover:bg-[#e2d020] text-black font-extrabold text-lg py-4 rounded-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-lg shadow-primary/20" onclick="sendWhatsApp()" type="button">
+<span class="material-symbols-outlined font-bold">send</span>
+                        Book Taxi Now
+                    </button>
+<p class="text-center text-text-muted text-xs mt-4 uppercase tracking-widest font-semibold">
+                        Secure booking via WhatsApp
+                    </p>
+</div>
+</form>
+</div>
+<!-- Features -->
+<section class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 text-center">
+<div class="p-4">
+<span class="material-symbols-outlined text-primary text-4xl mb-3">verified_user</span>
+<h4 class="font-bold mb-1">Safe Rides</h4>
+<p class="text-sm text-text-muted">Verified drivers and GPS tracked vehicles.</p>
+</div>
+<div class="p-4">
+<span class="material-symbols-outlined text-primary text-4xl mb-3">schedule</span>
+<h4 class="font-bold mb-1">24/7 Service</h4>
+<p class="text-sm text-text-muted">Available anytime, anywhere in the city.</p>
+</div>
+<div class="p-4">
+<span class="material-symbols-outlined text-primary text-4xl mb-3">payments</span>
+<h4 class="font-bold mb-1">Fixed Pricing</h4>
+<p class="text-sm text-text-muted">No hidden charges. Transparent billing.</p>
+</div>
+</section>
+</main>
+<!-- Map Section Placeholder -->
+<div class="w-full h-64 bg-zinc-900 mt-12 overflow-hidden border-t border-border-dark grayscale brightness-50 contrast-125" data-location="Chennai, India" style="">
+<div class="w-full h-full bg-cover bg-center" data-alt="Stylized city map in dark shades" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtrRqBxWKW9Sph1cZF5FZpvdu2t7KD7tAd2rtf4H39RajbcKMP2xiCUJqLGJPWevxAS8hqh-Zoy06VFWNo1VGzfpaqxuzHPHinjwMZ_E0Ca7-AcRSGBBX0GjMNvkwtFUsqV5GfkoYHTZEn91WFUa2jBar1l7WBlcpXHLAA3p6kAh-5SpcnPQBycYTp9S5dfMqu-UXTTWf9NTTlDS5EAHrIEHyrP229mHpthksPW4W8tkzBqYz-Y3sPfZ6aSQo0_T1BfWBN-ZJGVwo0');"></div>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-dark border-t border-border-dark py-12 px-4 mt-0">
+<div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="flex items-center gap-2">
+<div class="bg-primary p-1 rounded-md flex items-center justify-center">
+<span class="material-symbols-outlined text-black text-sm font-bold">local_taxi</span>
+</div>
+<span class="text-lg font-bold tracking-tight text-white italic">Yellow<span class="text-primary">Cab</span></span>
+</div>
+<p class="text-text-muted text-sm text-center md:text-left">© 2024 Yellow Cab Co. All rights reserved.</p>
+</div>
+<div class="flex gap-6">
+<a class="w-10 h-10 rounded-full border border-border-dark flex items-center justify-center text-text-muted hover:text-primary hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-border-dark flex items-center justify-center text-text-muted hover:text-primary hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined">chat</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-border-dark flex items-center justify-center text-text-muted hover:text-primary hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+</div>
+</div>
+</footer>
+
+
+<!-- ✅ FULL SCRIPT -->
+<script>
+    // -------------------------------
+    // 1) AUTOCOMPLETE (Nominatim API)
+    // -------------------------------
+    async function getSuggestions(inputId, listId) {
+        let query = document.getElementById(inputId).value;
+
+        if (query.length < 3) return;
+
+        let url = `https://nominatim.openstreetmap.org/search?format=json&q=${query}`;
+
+        let response = await fetch(url);
+        let data = await response.json();
+
+        let datalist = document.getElementById(listId);
+        datalist.innerHTML = "";
+
+        data.slice(0, 5).forEach(place => {
+            let option = document.createElement("option");
+            option.value = place.display_name;
+            datalist.appendChild(option);
+        });
+    }
+
+    // -------------------------------
+    // 2) GET COORDINATES
+    // -------------------------------
+    async function getCoordinates(place) {
+
+        let url = `https://nominatim.openstreetmap.org/search?format=json&q=${place}`;
+
+        let response = await fetch(url);
+        let data = await response.json();
+
+        if (data.length === 0) return null;
+
+        return {
+            lat: parseFloat(data[0].lat),
+            lon: parseFloat(data[0].lon)
+        };
+    }
+
+    // -------------------------------
+    // 3) DISTANCE CALCULATION (KM)
+    // -------------------------------
+    function calculateDistance(lat1, lon1, lat2, lon2) {
+
+        const R = 6371;
+        const dLat = (lat2 - lat1) * Math.PI / 180;
+        const dLon = (lon2 - lon1) * Math.PI / 180;
+
+        const a =
+            Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(lat1 * Math.PI / 180) *
+            Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+        return (R * c).toFixed(2);
+    }
+
+    // -------------------------------
+    // 4) SEND WHATSAPP MESSAGE
+    // -------------------------------
+    
+async function sendWhatsApp() {
+
+    const name = document.getElementById("name").value;
+    const mobile = document.getElementById("mobile").value;
+    const pickup = document.getElementById("pickup").value;
+    const drop = document.getElementById("drop").value;
+
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+
+    const tripType = document.querySelector("input[name='tripType']:checked").value;
+    const members = document.getElementById("members").value;
+    const carModel = document.getElementById("carModel").value;
+
+    // ✅ Validation
+    if (!name || !mobile || !pickup || !drop || !date || !time) {
+        alert("Please fill all details!");
+        return;
+    }
+
+    const message =
+        `🚖 *Taxi Booking Request* \n\n `+
+        `*Name:* ${name}\n` +
+        `*Mobile:* ${mobile}\n `+
+        `*Pickup:* ${pickup}\n` +
+        `*Drop:* ${drop}\n` +
+        `*Date:* ${date}\n` +
+        `*Time:* ${time}\n` +
+        `*Trip Type:* ${tripType}\n` +
+        `*Passengers:* ${members}\n` +
+        `*Car Model:* ${carModel}`;
+
+    let whatsappUrl =
+        `https://wa.me/919940395607?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappUrl, "_blank");
+}
+   
+    // -------------------------------
+    // 5) INPUT EVENTS
+    // -------------------------------
+    document.getElementById("pickup").addEventListener("input", function () {
+        getSuggestions("pickup", "pickupList");
+    });
+
+    document.getElementById("drop").addEventListener("input", function () {
+        getSuggestions("drop", "dropList");
+    });
+</script>
+
+
+
+</body>
+</html>
